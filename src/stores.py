@@ -19,7 +19,9 @@ def get_id_stores(lat,lng):
     
     stores = "https://www.zara.com/es/es/stores-locator/search"
     
-    stores_id = requests.get(stores, params=loc).json()
+    headers = {"User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"}
+    
+    stores_id = requests.get(stores, params=loc, headers=headers).json()
     
     lst_id_stores = []
     for store in stores_id:
@@ -53,7 +55,9 @@ def search_stores(lat,lng):
     
     stores = "https://www.zara.com/es/es/stores-locator/search"
     
-    stores_id = requests.get(stores, params=loc).json()
+    headers = {"User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"}
+    
+    stores_id = requests.get(stores, params=loc, headers=headers).json()
 
     lsts_store= []
 
@@ -83,4 +87,3 @@ def search_stores(lat,lng):
         lsts_store.append(dir_store)
 
     return lsts_store
-
