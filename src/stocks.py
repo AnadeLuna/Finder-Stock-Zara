@@ -1,15 +1,15 @@
-from selenium import webdriver
+
 import requests
 from src.stores import *
 from src.products import *
+from src.driver import driver
 
-
-def get_stock(search_terms,lat,lng):
+def get_stock(search_terms,lat,lng,driver=driver):
         """
         Definition: Funtion that get the stocks,url,image, product name, price, ids of products and stock of diferent sizes.
         
-        Input: "search_terms",latitude,longitude
-        example: "cazadora amarilla",40.416050951604056, -3.7072654155715603
+        Input: "search_terms",latitude,longitude,driver
+        example: "cazadora amarilla",40.416050951604056, -3.7072654155715603, driver
         
         Output: list of a dictionary with url, image, product name, price, ids products and stocks.
         example:[{'url': 'https://www.zara.com/es/es/blusa-crop-tie-dye-p00085048.html',
@@ -20,13 +20,9 @@ def get_stock(search_terms,lat,lng):
                     'stock': .......}]
 
         """
-    
-        driver = webdriver.Chrome("./chromedriver")
 
-        products = get_products(search_terms,driver)
-
-        driver.close()
-
+        products = get_products(search_terms)
+  
         store_info = search_stores(lat, lng)
         store_ids = [element["id"] for element in store_info]
 

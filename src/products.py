@@ -1,7 +1,7 @@
 from time import sleep
+from src.driver import driver
 
-
-def get_features_products(search_terms, driver):
+def get_features_products(search_terms, driver=driver):
     """
     Definition : Funtion that get the features (url, image, product_name and price) 
     of finded product or products and return the features.
@@ -48,7 +48,7 @@ def get_features_products(search_terms, driver):
 
 
 
-def get_prod_id(product_url, driver):
+def get_prod_id(product_url, driver=driver):
     
     """
     Definition: Funtion that get the ids (id_prod, id_color) of a product.
@@ -80,7 +80,7 @@ def get_prod_id(product_url, driver):
 
 
 
-def get_products(search_terms,driver):
+def get_products(search_terms,driver=driver):
     
     """
     Definition: Funtion that get a list with url, image, product name and price of products.
@@ -97,12 +97,12 @@ def get_products(search_terms,driver):
               'ids_prod': ['0085048', '947']}]
     """
     
-    products = get_features_products(search_terms, driver)
+    products = get_features_products(search_terms)
     for i,product in enumerate(products):
         
         product_url = product["url"]
         
-        url_ids = get_prod_id(product_url, driver)
+        url_ids = get_prod_id(product_url)
      
         products[i]["ids_prod"] = url_ids
     
