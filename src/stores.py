@@ -4,7 +4,7 @@ import pandas as pd
 
 def get_id_stores(lat,lng):
     """
-    Definition : Funtion that get a list of id stores.
+    Definition : Function that get a list of id stores.
     
     Input: latitude,longitude
     example: 41.65500470094807, -0.8888039716475229
@@ -30,23 +30,18 @@ def get_id_stores(lat,lng):
     return lst_id_stores
 
 
+
+
 def search_stores(lat,lng):
     
     """
-    Definition: Funtion that get a list of id_store,latitud,longitude,address,days and schedule
+    Definition: Function that get a list of id_store,latitud,longitude,address,days and schedule
     
     Input: latitude,longitude
     example: 40.416050951604056, -3.7072654155715603
     
     Output: list of dictionaries with id,latitud,longitud,adrees and day:[opening time and closing time]
-    example: [{'id': 92,'latitude': 40.415669,'longitude': -3.703315,'address': 'CALLE CARRETAS, 6',
-              'days': [{'L': ['10:00', '22:00'],
-               'M': ['10:00', '22:00'],
-               'X': ['10:00', '22:00'],
-               'J': ['10:00', '22:00'],
-               'V': ['10:00', '22:00'],
-               'S': ['10:00', '22:00'],
-               'D': ['11:00', '21:30']}}]
+   
     """
     
     loc = {

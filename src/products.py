@@ -3,7 +3,7 @@ from src.driver import driver
 
 def get_features_products(search_terms, driver=driver):
     """
-    Definition : Funtion that get the features (url, image, product_name and price) 
+    Definition : Function that get the features (url, image, product_name and price) 
     of finded product or products and return the features.
     
     Input: 'search_terms' , driver 
@@ -51,7 +51,7 @@ def get_features_products(search_terms, driver=driver):
 def get_prod_id(product_url, driver=driver):
     
     """
-    Definition: Funtion that get the ids (id_prod, id_color) of a product.
+    Definition: Function that get the ids (id_prod, id_color) of a product.
     
     Input: 'search_terms' , driver 
     example: 'cazadora amarilla', driver
@@ -83,18 +83,14 @@ def get_prod_id(product_url, driver=driver):
 def get_products(search_terms,driver=driver):
     
     """
-    Definition: Funtion that get a list with url, image, product name and price of products.
+    Definition: Function that get a list with url, image, product name and price of products.
     That function use function: get_features_products() and get_prod_id().
     
     Input: 'search_terms' , driver 
     example: 'cazadora amarilla', driver
     
     Output: list of a dictionary with url, image, product name, price, ids of products.
-    example: [{'url': 'https://www.zara.com/es/es/blusa-crop-tie-dye-p00085048.html',
-              'image': 'https://static.zara.net/photos///2021/V/0/1/p/0085/048/947/2/w/200/0085048947_1_1_1.jpg?ts=1615206456459',
-              'product_name': 'BLUSA CROP TIE DYE',
-              'price': '25,95 EUR',
-              'ids_prod': ['0085048', '947']}]
+    
     """
     
     products = get_features_products(search_terms)

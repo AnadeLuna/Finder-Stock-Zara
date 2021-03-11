@@ -6,19 +6,13 @@ from src.driver import driver
 
 def get_stock(search_terms,lat,lng,driver=driver):
         """
-        Definition: Funtion that get the stocks,url,image, product name, price, ids of products and stock of diferent sizes.
+        Definition: Function that get the stocks,url,image, product name, price, ids of products and stock of diferent sizes.
         
         Input: "search_terms",latitude,longitude,driver
         example: "cazadora amarilla",40.416050951604056, -3.7072654155715603, driver
         
         Output: list of a dictionary with url, image, product name, price, ids products and stocks.
-        example:[{'url': 'https://www.zara.com/es/es/blusa-crop-tie-dye-p00085048.html',
-                  'image': 'https://static.zara.net/photos///2021/V/0/1/p/0085/048/947/2/w/200/0085048947_1_1_1.jpg?ts=1615206456459',
-                  'product_name': 'BLUSA CROP TIE DYE',
-                  'price': '25,95 EUR',
-                  'ids_prod': ['0085048', '947']
-                    'stock': .......}]
-
+        
         """
 
         products = get_products(search_terms)
