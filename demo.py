@@ -30,8 +30,7 @@ if st.button("Aceptar"):
     lng = cordenadas[1]
 
     #Information
-    #prod_stock = None
-    #prod_stock = get_stock(search_terms,lat,lng)
+    prod_stock = get_stock(search_terms,lat,lng)
 
 
 #Ejemplos de como 
@@ -58,5 +57,5 @@ if st.button("Aceptar"):
 
 
 
-    #st.write("codenadas:",cordenadas)
-    #st.write(prod_stock)
+    st.write("codenadas:",cordenadas)
+    st.write(prod_stock)
