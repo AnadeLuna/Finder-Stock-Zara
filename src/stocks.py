@@ -32,6 +32,7 @@ def get_stock(search_terms,lat,lng,driver=driver):
         urls = [stock_url.format("".join(p["ids_prod"]).rjust(11,"0")) for p in products]
         
         for i,product in enumerate(products):
-            products[i]["stock"] = requests.get(urls[i],params=stock_params).json()
+            headers = {"User-Agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"}
+            products[i]["stock"] = requests.get(urls[i],params=stock_params,headers=headers).json()
             
         return products
